@@ -1,0 +1,60 @@
+# Comfigurations
+# https://sheldon.cli.rs/Configuration.html#-configuration
+
+# Examples
+# https://sheldon.cli.rs/Examples.html#deferred-loading-of-plugins-in-zshns-in-zsh
+
+shell = "zsh"
+
+[templates]
+defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks | get: \"post\" | nl }}"
+PATH = 'export PATH="$PATH:{{ dir }}"'
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+apply = ["source"]
+
+[plugins.pure]
+github = "sindresorhus/pure"
+use = ["async.zsh", "pure.zsh"]
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+apply = ["defer"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"]
+
+[plugins.autojump]
+github = "wting/autojump"
+dir = "bin"
+apply = ["PATH", "defer"]
+
+[plugins.zsh-replace-multiple-dots]
+github = "momo-lab/zsh-replace-multiple-dots"
+apply = ["defer"]
+
+[plugins.fzf]
+github = "junegunn/fzf"
+dir = "shell"
+apply = ["defer"]
+
+[plugins.asdf]
+github = "asdf-vm/asdf"
+use = ["asdf.sh"]
+apply = ["defer"]
+
+#[plugins.zsh-autosuggestions]
+#github = "zsh-users/zsh-autosuggestions"
+#apply = ["defer"]
+
+[plugins.rc-sync]
+local = '~/.config/zsh/rc'
+use = ['sync.zsh']
+apply = ['source']
+
+[plugins.rc-defer]
+local = '~/.config/zsh/rc'
+use = ['{!sync,*}.zsh']
+apply = ['defer']
