@@ -14,7 +14,6 @@ zstyle ':completion:*:default' menu select=1
 #--------------------------------------------------------------#
 
 # History
-HISTFILE="$XDG_STATE_HOME/zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 setopt BANG_HIST                # !をヒストリ展開に使用(d)
