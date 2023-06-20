@@ -24,3 +24,6 @@
 
 !/.config/sheldon/
 !/.config/sheldon/plugins.toml
+
+!/.config/iterm2/
+!/.config/iterm2/**
