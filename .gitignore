@@ -27,3 +27,8 @@
 
 !/.config/iterm2/
 !/.config/iterm2/**
+
+!/.config/karabiner/
+!/.config/karabiner/*
+!/.config/karabiner/assets/
+!/.config/karabiner/assets/**
