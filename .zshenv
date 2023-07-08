@@ -45,3 +45,9 @@ export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="${ASDF_DATA_DIR/#$HOME\//}/.tool-ver
 ##          Go                                                ##
 #--------------------------------------------------------------#
 export GOPATH="$XDG_DATA_HOME/go"
+
+
+#--------------------------------------------------------------#
+##          Path                                              ##
+#--------------------------------------------------------------#
+export PATH="$PATH:$GOPATH/bin"
